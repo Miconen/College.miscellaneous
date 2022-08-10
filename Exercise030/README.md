@@ -16,3 +16,6 @@ Here is the grading for this course:
 
 
 Create a program, which asks the user for their percent, and gives them their score.
+
+## Explanation
+A Simple exercise with a overengineered solution. Helped understand C# and the syntax.
