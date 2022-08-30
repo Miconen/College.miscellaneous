@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "dk8AfhVdYSdSQBzP/PGXhVODzAQyu8Ktw+8HSJzGMnwn8GnX/94inHRcacDY1ndsBVrM3RUZk9WUOovEOAF41g==",
+  "success": true,
+  "projectFilePath": "C:\\Tiedostot\\cs-extrat\\Extra005\\Extra005.fsproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\s2200708\\.nuget\\packages\\fsharp.core\\6.0.5\\fsharp.core.6.0.5.nupkg.sha512"
+  ],
+  "logs": []
+}
