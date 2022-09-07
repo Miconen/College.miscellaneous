@@ -1,0 +1,15 @@
+/Users/s2200708/Code/College.miscellaneous/fs-extras/Extra006/obj/Debug/net6.0/Extra006.csproj.AssemblyReference.cache
+/Users/s2200708/Code/College.miscellaneous/fs-extras/Extra006/obj/Debug/net6.0/Extra006.GeneratedMSBuildEditorConfig.editorconfig
+/Users/s2200708/Code/College.miscellaneous/fs-extras/Extra006/obj/Debug/net6.0/Extra006.AssemblyInfoInputs.cache
+/Users/s2200708/Code/College.miscellaneous/fs-extras/Extra006/obj/Debug/net6.0/Extra006.AssemblyInfo.cs
+/Users/s2200708/Code/College.miscellaneous/fs-extras/Extra006/obj/Debug/net6.0/Extra006.csproj.CoreCompileInputs.cache
+/Users/s2200708/Code/College.miscellaneous/fs-extras/Extra006/bin/Debug/net6.0/Extra006
+/Users/s2200708/Code/College.miscellaneous/fs-extras/Extra006/bin/Debug/net6.0/Extra006.deps.json
+/Users/s2200708/Code/College.miscellaneous/fs-extras/Extra006/bin/Debug/net6.0/Extra006.runtimeconfig.json
+/Users/s2200708/Code/College.miscellaneous/fs-extras/Extra006/bin/Debug/net6.0/Extra006.dll
+/Users/s2200708/Code/College.miscellaneous/fs-extras/Extra006/bin/Debug/net6.0/Extra006.pdb
+/Users/s2200708/Code/College.miscellaneous/fs-extras/Extra006/obj/Debug/net6.0/Extra006.dll
+/Users/s2200708/Code/College.miscellaneous/fs-extras/Extra006/obj/Debug/net6.0/refint/Extra006.dll
+/Users/s2200708/Code/College.miscellaneous/fs-extras/Extra006/obj/Debug/net6.0/Extra006.pdb
+/Users/s2200708/Code/College.miscellaneous/fs-extras/Extra006/obj/Debug/net6.0/Extra006.genruntimeconfig.cache
+/Users/s2200708/Code/College.miscellaneous/fs-extras/Extra006/obj/Debug/net6.0/ref/Extra006.dll

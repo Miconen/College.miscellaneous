@@ -1,0 +1,15 @@
+/Users/s2200708/Code/College.miscellaneous/fs-extras/Extra013/bin/Debug/net6.0/Extra013
+/Users/s2200708/Code/College.miscellaneous/fs-extras/Extra013/bin/Debug/net6.0/Extra013.deps.json
+/Users/s2200708/Code/College.miscellaneous/fs-extras/Extra013/bin/Debug/net6.0/Extra013.runtimeconfig.json
+/Users/s2200708/Code/College.miscellaneous/fs-extras/Extra013/bin/Debug/net6.0/Extra013.dll
+/Users/s2200708/Code/College.miscellaneous/fs-extras/Extra013/bin/Debug/net6.0/Extra013.pdb
+/Users/s2200708/Code/College.miscellaneous/fs-extras/Extra013/obj/Debug/net6.0/Extra013.csproj.AssemblyReference.cache
+/Users/s2200708/Code/College.miscellaneous/fs-extras/Extra013/obj/Debug/net6.0/Extra013.GeneratedMSBuildEditorConfig.editorconfig
+/Users/s2200708/Code/College.miscellaneous/fs-extras/Extra013/obj/Debug/net6.0/Extra013.AssemblyInfoInputs.cache
+/Users/s2200708/Code/College.miscellaneous/fs-extras/Extra013/obj/Debug/net6.0/Extra013.AssemblyInfo.cs
+/Users/s2200708/Code/College.miscellaneous/fs-extras/Extra013/obj/Debug/net6.0/Extra013.csproj.CoreCompileInputs.cache
+/Users/s2200708/Code/College.miscellaneous/fs-extras/Extra013/obj/Debug/net6.0/Extra013.dll
+/Users/s2200708/Code/College.miscellaneous/fs-extras/Extra013/obj/Debug/net6.0/refint/Extra013.dll
+/Users/s2200708/Code/College.miscellaneous/fs-extras/Extra013/obj/Debug/net6.0/Extra013.pdb
+/Users/s2200708/Code/College.miscellaneous/fs-extras/Extra013/obj/Debug/net6.0/Extra013.genruntimeconfig.cache
+/Users/s2200708/Code/College.miscellaneous/fs-extras/Extra013/obj/Debug/net6.0/ref/Extra013.dll

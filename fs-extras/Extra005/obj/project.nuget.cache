@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "dk8AfhVdYSdSQBzP/PGXhVODzAQyu8Ktw+8HSJzGMnwn8GnX/94inHRcacDY1ndsBVrM3RUZk9WUOovEOAF41g==",
+  "dgSpecHash": "uOLxrmsUisV8tZedw+cDJS9Bw4rVTuATcT1Xo6laOz2+lOXSm3bEJHgZBJJisl8yqAk1gPuOFRg8BmIBPO7U9g==",
   "success": true,
-  "projectFilePath": "C:\\Tiedostot\\cs-extrat\\Extra005\\Extra005.fsproj",
+  "projectFilePath": "/Users/s2200708/Code/College.miscellaneous/fs-extras/Extra005/Extra005.fsproj",
   "expectedPackageFiles": [
-    "C:\\Users\\s2200708\\.nuget\\packages\\fsharp.core\\6.0.5\\fsharp.core.6.0.5.nupkg.sha512"
+    "/Users/s2200708/.nuget/packages/fsharp.core/6.0.5/fsharp.core.6.0.5.nupkg.sha512"
   ],
   "logs": []
 }
