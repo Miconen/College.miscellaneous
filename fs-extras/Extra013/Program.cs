@@ -3,23 +3,6 @@ using System.Text.RegularExpressions;
 
 public class Program
 {
-    public enum NumberIndex
-    {
-        One,
-        Ten,
-        Hundred,
-        Thousand,
-        Million,
-        Billion,
-    }
-
-    public int CUTOFF_ONE = 1;
-    public int CUTOFF_TEN = 2;
-    public int CUTOFF_HUNDRED = 3;
-    public int CUTOFF_THOUSAND = 4;
-    public int CUTOFF_MILLION = 7;
-    public int CUTOFF_BILLION = 10;
-
     public static void Main(string[] args)
     {
         Program p = new Program();
@@ -35,23 +18,107 @@ public class Program
         }
     }
 
-    public void numberConverter(string snumber)
+    public void numberConverter(string sNumber)
     {
-        int number = int.Parse(snumber);
-        int numberSize = getIntSize(number);
-        for (int i = snumber.Length; i < 0; i--)
+        // Holds and sends three numbers at a time to get "translated" to a string
+        // This makes the translation process easier
+        int[] numberTriplet = new int[3];
+        string parsedResponse = "";
+        for (int count = 0; count < sNumber.Length; count++)  
         {
-            NumberIndex index = sizeToIndex(i);
-            Console.WriteLine(singleNumberToString(snumber[i], index));
+            int nthRun = count + 1;
+            numberTriplet[count % 3] = sNumber[count] - '0';
+            // Assemble and send triplets forward to be parsed
+            if (nthRun % 3 == 0)
+            {
+                parsedResponse = tripletToString(numberTriplet, count / 3) + " " + parsedResponse;
+                Array.Clear(numberTriplet, 0, numberTriplet.Length);
+            }
+            // Recover last numbers of input that didn't end up being a full triplet
+            else if (nthRun == sNumber.Length)
+            {
+                Array.Clear(numberTriplet, 0, numberTriplet.Length);
+                if (nthRun % 3 == 1)
+                {
+                    numberTriplet[2] = sNumber[count] - '0';
+                }
+                else if (nthRun % 3 == 2)
+                {
+                    numberTriplet[1] = sNumber[count - 1] - '0';
+                    numberTriplet[2] = sNumber[count] - '0';
+                }
+                // Send numberTriplet forward if we are on the third OR the last iteration.
+                parsedResponse = tripletToString(numberTriplet, count / 3) + " " + parsedResponse;
+            }
         }
+
+        Console.WriteLine(parsedResponse);
     }
 
-    public string singleNumberToString(char digit, NumberIndex numberSize)
+    public string tripletToString(int[] triplet, int nthRun)
     {
-        int num = digit - '0';
-        string prefix = numberToString(num);
-        string suffix = numberSizeToString((int)numberSize);
-        return prefix + suffix;
+        string response = "";
+
+        // Nth digit in number, IE 3 would be the 3rd number of 321 and 2 the second etc.
+        int suffix = 2;
+        foreach (int digit in triplet)
+        {
+            string format = "";
+            // First filter out the weird grammatical edgecases in the Finnish language
+            // Weed out leading zeros in hundreths place
+            if (suffix == 2 && digit == 0)
+            {
+                response += "";
+            }
+            // Weed out leading zeros in tenths place if hundreths place is zero aswell
+            else if (suffix == 1 && digit == 0 && triplet[0] == 0)
+            {
+                response += "";
+            }
+            // Singular hundreth place
+            else if (suffix == 2 && digit == 1)
+            {
+                response += "sata";
+            }
+            // Handle spelling of numbers between 11-19
+            else if (triplet[1] == 1 && triplet[2] != 0 && suffix != 2)
+            {
+                if (suffix == 0) response += $"{numberToString(digit)}toista";
+            }
+            else if (suffix == 1 && digit == 1)
+            {
+                response += "kymmenen";
+            }
+            // If triplet == [0, 0, 1], don't add formatting. Instead add a special fuffix at the end
+            else if (nthRun > 0 && triplet[0] == 0 && triplet[1] == 0 && triplet[2] == 1)
+            {
+                response += "";
+            }
+            // Print the default format if no weird grammatical edgecases were met
+            else 
+            {
+                response += $"{numberToString(digit)}{getTripletSuffix(suffix)}";
+            }
+            suffix--;
+        }
+        
+        // If triplet == [0, 0, 1] return singular suffix, used as a prefix in this case. IE "TUHAT viisisataa"
+        response += (nthRun > 0 && response == "") ? getSingularNumberSuffix(nthRun) : getNumberSuffix(nthRun);
+
+        return response;
+    }
+
+    public string getTripletSuffix(int suffix)
+    {
+        switch (suffix)
+        {
+            case (1):
+                return "kymmentä";
+            case (2):
+                return "sataa";
+            default:
+                return "";
+        }
     }
 
     public string numberToString(int number)
@@ -81,58 +148,34 @@ public class Program
         }
     }
 
-    public string numberSizeToString(int number)
+    public string getNumberSuffix(int suffix)
     {
-        NumberIndex index = (NumberIndex)number;
-        switch (index)
+        switch (suffix)
         {
-            case (NumberIndex.Ten):
-                return "kymmentä";
-            case (NumberIndex.Hundred):
-                return "sataa";
-            case (NumberIndex.Thousand):
+            case (1):
                 return "tuhatta";
-            case (NumberIndex.Million):
+            case (2):
                 return "miljoonaa";
-            case (NumberIndex.Billion):
+            case (3):
                 return "miljardia";
             default:
                 return "";
         }
     }
 
-    public NumberIndex sizeToIndex(int number)
+    public string getSingularNumberSuffix(int suffix)
     {
-        if (number == this.CUTOFF_ONE) return NumberIndex.One;
-        if (number == this.CUTOFF_TEN) return NumberIndex.Ten;
-        if (number == this.CUTOFF_HUNDRED) return NumberIndex.Hundred;
-        if (number >= this.CUTOFF_THOUSAND && number <= this.CUTOFF_MILLION - 1) return NumberIndex.Thousand;
-        if (number >= this.CUTOFF_MILLION && number <= this.CUTOFF_BILLION - 1) return NumberIndex.Million;
-        return NumberIndex.Billion;
-    }
-
-    public bool matchIndex(int number)
-    {
-        if (number == this.CUTOFF_ONE) return true;
-        if (number == this.CUTOFF_TEN) return true;
-        if (number == this.CUTOFF_HUNDRED) return true;
-        if (number == this.CUTOFF_THOUSAND) return true;
-        if (number == this.CUTOFF_MILLION) return true;
-        if (number == this.CUTOFF_BILLION) return true;
-        return false;
-    }
-
-    public int getIntSize(int number)
-    {
-        int count = 0;
-        // Keep going while the last digit is 0
-        while (number > 0)
+        switch (suffix)
         {
-            number = number / 10;
-            count++;
+            case (1):
+                return "tuhat";
+            case (2):
+                return "miljoona";
+            case (3):
+                return "miljardi";
+            default:
+                return "";
         }
-
-        return count;
     }
 
     public string getInput()

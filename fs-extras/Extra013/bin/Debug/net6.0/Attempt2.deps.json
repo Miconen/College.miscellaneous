@@ -6,15 +6,15 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v6.0": {
-      "Extra013/1.0.0": {
+      "Attempt2/1.0.0": {
         "runtime": {
-          "Extra013.dll": {}
+          "Attempt2.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "Extra013/1.0.0": {
+    "Attempt2/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
