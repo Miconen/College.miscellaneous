@@ -31,7 +31,9 @@ public class Program
             // Assemble and send triplets forward to be parsed
             if (nthRun % 3 == 0)
             {
-                parsedResponse = tripletToString(numberTriplet, count / 3) + " " + parsedResponse;
+                // Round lenght down to closest number dividable by three
+                int closestTriplet = (sNumber.Length - count) - (sNumber.Length - count) % 3;
+                parsedResponse += tripletToString(numberTriplet, closestTriplet / 3);
                 Array.Clear(numberTriplet, 0, numberTriplet.Length);
             }
             // Recover last numbers of input that didn't end up being a full triplet
@@ -48,7 +50,9 @@ public class Program
                     numberTriplet[2] = sNumber[count] - '0';
                 }
                 // Send numberTriplet forward if we are on the third OR the last iteration.
-                parsedResponse = tripletToString(numberTriplet, count / 3) + " " + parsedResponse;
+                // Round lenght down to closest number dividable by three
+                int closestTriplet = (sNumber.Length - count) - (sNumber.Length - count) % 3;
+                parsedResponse += tripletToString(numberTriplet, closestTriplet / 3);
             }
         }
 
@@ -58,7 +62,7 @@ public class Program
     public string tripletToString(int[] triplet, int nthRun)
     {
         string response = "";
-
+        Console.WriteLine(nthRun);
         // Nth digit in number, IE 3 would be the 3rd number of 321 and 2 the second etc.
         int suffix = 2;
         foreach (int digit in triplet)
@@ -105,7 +109,7 @@ public class Program
         // If triplet == [0, 0, 1] return singular suffix, used as a prefix in this case. IE "TUHAT viisisataa"
         response += (nthRun > 0 && response == "") ? getSingularNumberSuffix(nthRun) : getNumberSuffix(nthRun);
 
-        return response;
+        return response + " ";
     }
 
     public string getTripletSuffix(int suffix)

@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Documents\\Menu\\Code\\College.miscellaneous\\fs-extras\\Extra013\\Attempt2\\Attempt2.csproj",
+      "projectUniqueName": "D:\\Documents\\Menu\\Code\\College.miscellaneous\\fs-extras\\Extra013\\Attempt2.csproj",
       "projectName": "Attempt2",
-      "projectPath": "D:\\Documents\\Menu\\Code\\College.miscellaneous\\fs-extras\\Extra013\\Attempt2\\Attempt2.csproj",
+      "projectPath": "D:\\Documents\\Menu\\Code\\College.miscellaneous\\fs-extras\\Extra013\\Attempt2.csproj",
       "packagesPath": "C:\\Users\\micor\\.nuget\\packages\\",
-      "outputPath": "D:\\Documents\\Menu\\Code\\College.miscellaneous\\fs-extras\\Extra013\\Attempt2\\obj\\",
+      "outputPath": "D:\\Documents\\Menu\\Code\\College.miscellaneous\\fs-extras\\Extra013\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\micor\\AppData\\Roaming\\NuGet\\NuGet.Config"
