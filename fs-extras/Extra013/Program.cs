@@ -62,7 +62,6 @@ public class Program
     public string tripletToString(int[] triplet, int nthRun)
     {
         string response = "";
-        Console.WriteLine(nthRun);
         // Nth digit in number, IE 3 would be the 3rd number of 321 and 2 the second etc.
         int suffix = 2;
         foreach (int digit in triplet)
